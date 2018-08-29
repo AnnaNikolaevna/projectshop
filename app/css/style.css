@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/*Создайте миксины для цветов*/
+h1 {
+  color: #f00;
+}
+
+h2 {
+  color: #0f0;
+}
+
+h3 {
+  color: #00f;
+}
+
+/*Сделайте следующие функции*/
+div {
+  height: 200px;
+  width: 200px;
+}
+
+/*Сделайте следующие функции*/
+/*Написать 3 примера с использованием %extend*/
+/*example-1*/
+.msg-success, .msg-error, .msg-warning {
+  background-color: #ccc;
+  color: #111;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.msg-success {
+  background-color: #4CAF50;
+}
+
+.msg-error {
+  background-color: #F44336;
+}
+
+.msg-warning {
+  background-color: #FFEB3B;
+}
+
+/*example-2*/
+.teammember-developer:hover {
+  border-bottom: 2px solid #ffeb3b;
+}
+
+.teammember-dising:hover {
+  border-bottom: 2px solid #55bb33;
+}
+
+/*example-3*/
+.btn-red {
+  color: #f00;
+}
+
+.btn-green {
+  color: #0f0;
+}
+
+.btn-blue {
+  color: #00f;
+}

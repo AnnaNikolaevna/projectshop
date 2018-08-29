@@ -1,0 +1,126 @@
+/*Создайте миксины для цветов*/
+
+//	Миксин .red должно скомпилироваться в color: red.
+//
+//	Миксин .blue должно скомпилироваться в color: blue.
+//
+//	Миксин .green должно скомпилироваться в color: green.
+@mixin hot_color {
+  color: #f00;
+}
+
+h1 {
+  @include hot_color;
+}
+
+@mixin summer_color {
+  color: #0f0;
+}
+
+h2 {
+  @include summer_color;
+}
+
+@mixin cold_color {
+  color: #00f;
+}
+
+h3 {
+  @include cold_color;
+}
+
+/*Сделайте следующие функции*/
+
+//	Функция .h(число) должна компилироваться в height: число. Пример: .h(200px) скомпилируется в height: 200px.
+//	Функция .w(число) должна компилироваться в width: число. Пример: .w(200px) скомпилируется в width: 200px.
+@function hght($pxsize) {
+  @return ($pxsize) + px;
+}
+
+@function wdth($pxsize) {
+  @return ($pxsize) + px;
+}
+
+div {
+  height: hght(200);
+  width: wdth(200);
+}
+
+/*Сделайте следующие функции*/
+
+//	Функция .placeholder() должна компилироваться в кроссбраузерный вариант псевдоэлемента placeholder.
+//	Функция .selection() должна компилироваться в кроссбраузерный вариант псевдоэлемента selection.
+//
+//	Функция .keyframes() должна компилироваться в кроссбраузерный вариант команды keyframes.
+/*Написать 3 примера с использованием %extend*/
+
+/*example-1*/
+
+%message {
+  background-color: #ccc;
+  color: #111;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.msg-success {
+  @extend %message;
+  background-color: #4CAF50;
+}
+
+.msg-error {
+  @extend %message;
+  background-color: #F44336;
+}
+
+.msg-warning {
+  @extend %message;
+  background-color: #FFEB3B;
+}
+
+/*example-2*/
+
+%team {
+  width: 25%;
+  float: right;
+  border-bottom: 2px solid transparent;
+}
+
+.teammember-developer:hover {
+  @extend %team;
+  border-bottom: 2px solid #ffeb3b;
+}
+
+.teammember-dising:hover {
+  @extend %team;
+  border-bottom: 2px solid #55bb33;
+}
+
+/*example-3*/
+
+%btn {
+  display: flex;
+  align-items: center;
+  border: 0;
+  outline: 0;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  background-color: #414141;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-red {
+  @extend %btn;
+  color: #f00;
+}
+
+.btn-green {
+  @extend %btn;
+  color: #0f0;
+}
+
+.btn-blue {
+  @extend %btn;
+  color: #00f;
+}
